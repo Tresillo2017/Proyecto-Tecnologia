@@ -1,6 +1,9 @@
 // include the library code:
 #include <LiquidCrystal.h>
 
+// inizializate var with 0
+int var = 0;
+
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
@@ -18,7 +21,6 @@ void setup()
 
 void scrolling_loop()
 {
-  	var = 0;
     while (var = 0)
     {
   		String text = "Gana y Juega";
@@ -48,29 +50,29 @@ void scrolling_loop()
 
 void pregunta_1()
 {
-  	var = 0;
-  	while (var = 0);
-    String text = "¿Quién descubrió América?";
-    int i, j=0;
-    for (i =0; i<text.length(); i++)
+  	while (var = 0)
     {
-        if(i<15)
-        {
-            lcd.setCursor(i,0);
-            lcd.print(text.charAt(i));
-            delay(150);
-        }
-        else
-        {
-            for(i=16;i<text.length();i++)
-            {   
-                j++;
-                lcd.setCursor(0,0);
-                lcd.print(text.substring(j,j+16));
-                delay(250);
-            }
-        }
-    }
+      String text = "¿Quién descubrió América?";
+      int i, j=0;
+      for (i =0; i<text.length(); i++)
+      {
+          if(i<15)
+          {
+              lcd.setCursor(i,0);
+              lcd.print(text.charAt(i));
+              delay(150);
+          }
+          else
+          {
+              for(i=16;i<text.length();i++)
+              {   
+                  j++;
+                  lcd.setCursor(0,0);
+                  lcd.print(text.substring(j,j+16));
+                  delay(250);
+              }
+          }
+      }
     // if ("Boton_a = HIGH")
         // error()
         // break;
@@ -78,7 +80,8 @@ void pregunta_1()
         // correcto()
         // break;
     
-    break;
+      break;
+    }
 } 
 
 void loop()
