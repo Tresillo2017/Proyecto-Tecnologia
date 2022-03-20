@@ -44,62 +44,86 @@ ans = [
     2  # pregunta 20
 ]  
 
-opciones = [     
+opcionesa = [     
     "Cristobal Colon",  
-    "Ibai Llanos",
 
     "1945",  
-    "2000",
 
     "343",  
-    "50",
 
     "Abraham",  
-    "Moises",
 
     "Rafael Nadal",  
-    "Tomas Palma",  
 
     "Daniel Radcliffe",
-    "Tom Holland",
 
     "Europa",
-    "America",
 
     "Thomas Edison",
-    "Abraham Mateo",
+
+    "China",
 
     "Madrid",
-    "Barcelona",
 
     "Amazonas",
-    "Duero",
 
     "Romulo y Remo",
-    "Pomulo y Rema",
 
-    "Don Quijote",
-    "Miguel de Cervantes",
+    "Don Quijot ",
 
     "Freddy Mercury",
-    "Jhon Lennon",
 
     "Pewdiepie",
-    "Djmariio",
 
     "Miguel Angel",
-    "Beethoven",
-
 
     "Mozart",
-    "Galileo",
 
     "Francia",
-    "Brasil",
 
     "Francia",
-    "Argentina",
-
+    
     "Barcelona",
-    "Lakers"
+]
+
+opcionesb = [
+    "Ibai Llanos",
+    
+    "2000",
+    
+    "50",
+    
+    "Moises",
+    
+    "Tomas Palma",
+    
+    "Tom Holland",
+    
+    "America",
+    
+    "Abraham Mateo",
+    
+    "Teruel",
+    
+    "Barcelona",
+    
+    "Dueo",
+    
+    "Pomulo y Rema",
+    
+    "Miguel de Cervantes",
+    
+    "Jhon Lennon",
+    
+    "Djmariio",
+    
+    "Beethoven",
+    
+    "Galileo",
+    
+    "Brasil",
+    
+    "Argentina",
+    
+    "Lakers",
 ]

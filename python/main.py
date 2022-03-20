@@ -1,3 +1,4 @@
+from re import A
 import pygame
 import random
 from arrays import *
@@ -63,7 +64,7 @@ def drawText(surface, text, color, rect, font, align=textAlignLeft, aa=False, bk
     return ""
 
 
-
+pygame.display.set_caption('Gana y Juega')
 orden_preguntas = random.sample(range(0,20), 20)
 
 textRect = pygame.Rect(50, 50, 430, 270)
@@ -78,16 +79,27 @@ for turno in range(0,20):
 
     msg = preguntas[orden_preguntas[turno]]
     window.fill((255, 255, 255))
+    textRect = pygame.Rect(50, 50, 430, 100)
     pygame.draw.rect(window, (255, 255, 255), textRect, 1)
     drawTextRect = textRect.inflate(-5, -5)
     drawText(window, msg, (0, 0, 0), drawTextRect, font, textAlignCenter, True)
+    # opciones
+    textRect = pygame.Rect(50,160,150,100) # left, top, width, height
+    drawTextRect = textRect.inflate(-5, -5)
+    drawText(window, opcionesa[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True)
+    textRect = pygame.Rect(300,160,150,100)
+    drawTextRect = textRect.inflate(-5, -5)
+    drawText(window, opcionesb[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True)
     pygame.display.flip()
-
+    # fin de opciones
     #Esperar respuesta por bluetooth
     while 1:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                print (event.key, 'pressed')
+                print (event.key, 'pressed') # debug
+                if event.key == 1073741882 or 282:
+                    pygame.quit()
+                    exit()
 
 
 #Limpiar la pantalla
