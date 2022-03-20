@@ -1,0 +1,22 @@
+String preguntas[] = {
+    "Quien descubrio America?",
+    "Cuando termino la Segunda Guerra Mundial?",
+    "Cuantas especies de perros hay?",
+    "Quien salvo al pueblo hebreo del faraon egipcio?",
+    "Quien es el tenista con mas Grand Slam?",
+    "Como se llama el actor de Harry Potter?",
+    "En que continente se encuentran las Islas del Caribe?",
+    "Quien inventó la bombilla?",
+    "Cual es el territorio con mayor poblacion?",
+    "En que ciudad espaniola esta el estadio conocido como Wanda Metropolitano?",
+    "Cual es el rio más caudaloso del mundo?",
+    "Quienes fueron los dos hermanos fundadores de Roma?",
+    "Quien era conocido como el manco de Lepanto?",
+    "Quien fue el famoso cantante del grupo musical Queen?",
+    "Quien es el YouTuber con más suscriptores?",
+    "Que gran artista pinto la Capilla Sixtina?",
+    "Quien descubrio los satelites de Júpiter?",
+    "Que pais tiene mas copas del mundo de futbol?",
+    "De que pais es Lionel Andrés Messi?",
+    "Donde jugo en la mayoria de su carrera Kobe Bryant?"
+};

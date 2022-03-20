@@ -1,0 +1,87 @@
+{  
+    "ques" : 
+    [  
+        "Q1. ¿Quién descubrió América?",  
+        "Q2. ¿Cuándo terminó la Segunda Guerra Mundial?",  
+        "Q3. ¿Cuántas especies de perros hay?",  
+        "Q4. ¿Quién salvó al pueblo hebreo del faraón egipcio?",  
+        "Q5. ¿Quién es el tenista con más Grand Slam?"  
+        "Q6. ¿Cómo se llama el actor de Harry Potter?"
+        "Q7. ¿En qué continente se encuentran las Islas del Caribe?",
+        "Q8. ¿Quién inventó la bombilla?",
+        "Q9. ¿Cuál es el territorio con mayor población?",
+        "Q10. ¿En qué ciudad española está el estadio conocido como Wanda Metropolitano?",
+        "Q11. ¿Cuál es el río más caudaloso del mundo?",
+        "Q12. ¿Quienes fueron los dos hermanos fundadores de Roma?",
+        "Q13. ¿Quién era conocido como “el manco de Lepanto”?",
+        "Q14. ¿Quién fue el famoso cantante del grupo musical Queen?",
+        "Q15. ¿Quién es el YouTuber con más suscriptores?",
+        "Q16. ¿Qué gran artista pintó la Capilla Sixtina?",
+        "Q17. ¿Quién descubrió los satélites de Júpiter?",
+        "Q18. ¿Qué país tiene más copas del mundo de fútbol?",
+        "Q19. ¿De qué país es Lionel Andrés Messi?",
+        "Q20. ¿Dónde jugó en la mayoría de su carrera Kobe Bryant?",
+
+    ],  
+    "ans" : 
+    [  
+        1, // pregunta 1
+        1, // pregunta 2
+        1, // pregunta 3
+        2, // pregunta 4 
+        1, // pregunta 5
+        1, // pregunta 6
+        2, // pregunta 7
+        1, // pregunta 8
+        1, // pregunta 9
+        1, // pregunta 10
+        1, // pregunta 11
+        1, // pregunta 12
+        2, // pregunta 13
+        1, // pregunta 14
+        1, // pregunta 15
+        1, // pregunta 16
+        2, // pregunta 17
+        2, // pregunta 18
+        2, // pregunta 19
+        2  // pregunta 20
+    ],  
+    "choices" : 
+    [  
+        [  
+        "Cristobal Colon",  
+        "Ibai Llanos"
+        ],  
+        [  
+        "1945",  
+        "2000" 
+        ],  
+        [  
+        "343",  
+        "50" 
+        ],  
+        [  
+        "Abraham",  
+        "Moises"  
+        ],  
+        [  
+        "Rafael Nadal",  
+        "Tomas Palma"  
+        ],
+        [
+        "Daniel Radcliffe",
+        "Tom Holland"
+        ],
+        [
+        "Europa",
+        "America"
+        ],
+        [
+        "Thomas Edison",
+        "Abraham Mateo"
+        ],
+        [
+        ""
+        ]
+    ]  
+}  
