@@ -69,7 +69,7 @@ orden_preguntas = random.sample(range(0,20), 20)
 
 textRect = pygame.Rect(50, 50, 430, 270)
 
-window = pygame.display.set_mode((500, 500))
+window = pygame.display.set_mode((480, 320), pygame.FULLSCREEN)
 run = True
 
 for turno in range(0,20):
@@ -79,7 +79,7 @@ for turno in range(0,20):
 
     msg = preguntas[orden_preguntas[turno]]
     window.fill((255, 255, 255))
-    textRect = pygame.Rect(50, 50, 430, 100)
+    textRect = pygame.Rect(25, 50, 430, 100)
     pygame.draw.rect(window, (255, 255, 255), textRect, 1)
     drawTextRect = textRect.inflate(-5, -5)
     drawText(window, msg, (0, 0, 0), drawTextRect, font, textAlignCenter, True)
