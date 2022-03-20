@@ -5,8 +5,8 @@
         "Q2. ¿Cuándo terminó la Segunda Guerra Mundial?",  
         "Q3. ¿Cuántas especies de perros hay?",  
         "Q4. ¿Quién salvó al pueblo hebreo del faraón egipcio?",  
-        "Q5. ¿Quién es el tenista con más Grand Slam?"  
-        "Q6. ¿Cómo se llama el actor de Harry Potter?"
+        "Q5. ¿Quién es el tenista con más Grand Slam?",
+        "Q6. ¿Cómo se llama el actor de Harry Potter?",
         "Q7. ¿En qué continente se encuentran las Islas del Caribe?",
         "Q8. ¿Quién inventó la bombilla?",
         "Q9. ¿Cuál es el territorio con mayor población?",
@@ -81,7 +81,48 @@
         "Abraham Mateo"
         ],
         [
-        ""
+        "Madrid",
+        "Barcelona"
+        ]
+        [
+        "Amazonas",
+        "Duero"
+        ]
+        [
+        "Romulo y Remo",
+        "Pomulo y Rema"
+        ]
+        [
+        "Don Quijote",
+        "Miguel de Cervantes"
+        ]
+        [
+        "Freddy Mercury",
+        "Jhon Lennon"
+        ]
+        [
+        "Pewdiepie",
+        "Djmariio"
+        ]
+        [
+        "Miguel Angel",
+        "Beethoven"
+        ]
+        [
+        "Mozart",
+        "Galileo"
+        ]
+        [
+        "Francia",
+        "Brasil"
+        ]
+        [
+        "Francia",
+        "Argentina"
+        ]
+        [
+        "Barcelona",
+        "Lakers"
         ]
     ]  
 }  

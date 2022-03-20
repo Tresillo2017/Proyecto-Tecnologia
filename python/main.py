@@ -1,9 +1,30 @@
 import pygame
 import random
 
+preguntas[
+    "Q1. ¿Quién descubrió América?",  
+    "Q2. ¿Cuándo terminó la Segunda Guerra Mundial?",  
+    "Q3. ¿Cuántas especies de perros hay?",  
+    "Q4. ¿Quién salvó al pueblo hebreo del faraón egipcio?",  
+    "Q5. ¿Quién es el tenista con más Grand Slam?",
+    "Q6. ¿Cómo se llama el actor de Harry Potter?",
+    "Q7. ¿En qué continente se encuentran las Islas del Caribe?",
+    "Q8. ¿Quién inventó la bombilla?",
+    "Q9. ¿Cuál es el territorio con mayor población?",
+    "Q10. ¿En qué ciudad española está el estadio conocido como Wanda Metropolitano?",
+    "Q11. ¿Cuál es el río más caudaloso del mundo?",
+    "Q12. ¿Quienes fueron los dos hermanos fundadores de Roma?",
+    "Q13. ¿Quién era conocido como “el manco de Lepanto”?",
+    "Q14. ¿Quién fue el famoso cantante del grupo musical Queen?",
+    "Q15. ¿Quién es el YouTuber con más suscriptores?",
+    "Q16. ¿Qué gran artista pintó la Capilla Sixtina?",
+    "Q17. ¿Quién descubrió los satélites de Júpiter?",
+    "Q18. ¿Qué país tiene más copas del mundo de fútbol?",
+    "Q19. ¿De qué país es Lionel Andrés Messi?",
+    "Q20. ¿Dónde jugó en la mayoría de su carrera Kobe Bryant?"
+]
 
-
-
+turno = 0
 pygame.init()
 font = pygame.font.SysFont(None, 40)
 
@@ -87,7 +108,7 @@ while run or turno!=20:
     pygame.display.flip()
 
     #Esperar respuesta por bluetooth
-    turno++
+    turno+1
 
 #Limpiar la pantalla
 ## Escribir contador de respuestas correcta
