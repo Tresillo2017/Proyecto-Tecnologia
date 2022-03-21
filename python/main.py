@@ -14,6 +14,8 @@ textAlignRight = 1
 textAlignCenter = 2
 textAlignBlock = 3
 
+
+
 # light shade of the button
 color_light = (170,170,170)
 
