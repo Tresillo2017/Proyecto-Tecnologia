@@ -28,7 +28,7 @@ smallfont = pygame.font.SysFont('Corbel',35)
 
 # rendering a text written in
 # this font
-text = smallfont.render('Next' , True , color)
+text = smallfont.render('Corregir' , True , color)
 
 def drawText(surface, text, color, rect, font, align=textAlignLeft, aa=False, bkg=None):
     lineSpacing = -2
