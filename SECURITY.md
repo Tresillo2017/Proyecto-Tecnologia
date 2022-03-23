@@ -13,5 +13,6 @@ Supported python versions
 
 ## Vulnerability
 
+
 Since this projects isn't related with internet no vulnerability was found.
-=
+
