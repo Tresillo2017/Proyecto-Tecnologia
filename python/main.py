@@ -1,11 +1,14 @@
-from re import A
+from re import A, T
+from sys import exit
 import pygame
 import random
 import os
+import server as btserver
 from arrays import *
 
 
 turno = 0
+puntuacion = 0
 pygame.init()
 font = pygame.font.SysFont(None, 40)
 
@@ -23,8 +26,26 @@ color_dark = (100,100,100)
 # white color
 color = (255,255,255)
 
-smallfont = pygame.font.SysFont('Corbel',35)
+# add pygame.FULLSCREEN for fullscreen
+window = pygame.display.set_mode((480, 320))
+"""
+Start of the width and height variables
+"""
+# stores the width of the
+# screen into a variable
+width = 360 # window.get_width()
 
+# stores the height of the
+# screen into a variable
+height = 500 # window.get_height()
+"""
+End of the width and height variables
+"""
+# stores the (x,y) coordinates into
+# the variable as a tuple
+mouse = pygame.mouse.get_pos()
+
+smallfont = pygame.font.SysFont('Corbel',35)
 
 # rendering a text written in
 # this font
@@ -81,7 +102,7 @@ def drawText(surface, text, color, rect, font, align=textAlignLeft, aa=False, bk
         return remainingText
     return ""
 
-def botton_siguiente():
+def botton_siguiente(indice):
     pygame.init()
     while True:
         for ev in pygame.event.get():
@@ -96,7 +117,7 @@ def botton_siguiente():
                 # button the game is terminated
                 if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
                     print("Boton pulsado")
-                    # siguiente()
+                    corregir(indice)
 
         # fills the screen with a color
         #window.fill((60,25,60))
@@ -108,17 +129,22 @@ def botton_siguiente():
         # if mouse is hovered on a button it
         # changes to lighter shade 
         if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-            pygame.draw.rect(window,color_light,[200,150,170,40])
+            pygame.draw.rect(window,color_light,[160,260,170,40])
         else:
-            pygame.draw.rect(window,color_dark,[200,150,170,40])
+            pygame.draw.rect(window,color_dark,[160,260,170,40])
         # superimposing the text onto our button
-        window.blit(text , (width/2+50,height/2))
+        window.blit(text , (180,260))
     
         # updates the frames of the game
         pygame.display.update()
 
-# def correcta():
-
+def corregir(indice):
+    if respuesta == "A" and ans[indice] == 1:
+        puntuacion = puntuacion +1
+    elif respuesta == "B" and ans[indice] == 2:
+        puntuacion = puntuacion +1
+    else:
+        print("respuesta incorrecta")
 
 pygame.display.set_caption('Gana y Juega')
 orden_preguntas = random.sample(range(0,20), 20)
@@ -128,25 +154,13 @@ textRect = pygame.Rect(50, 50, 430, 270)
 # add pygame.FULLSCREEN for fullscreen
 window = pygame.display.set_mode((480, 320))
 
-# stores the width of the
-# screen into a variable
-width = window.get_width()
-
-# stores the height of the
-# screen into a variable
-height = window.get_height()
-
-# stores the (x,y) coordinates into
-# the variable as a tuple
-mouse = pygame.mouse.get_pos()
-
 run = True
 
 for turno in range(0,20):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             break
-
+        
     msg = preguntas[orden_preguntas[turno]]
     window.fill((255, 255, 255))
     textRect = pygame.Rect(25, 50, 430, 100)
@@ -157,17 +171,19 @@ for turno in range(0,20):
     
     textRect = pygame.Rect(50,160,150,100) # left, top, width, height
     drawTextRect = textRect.inflate(-5, -5)
-    drawText(window, opcionesa[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True)
+    drawText(window, opcionesa[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True) # imprime opcion a
     
     textRect = pygame.Rect(300,170,150,100)
     drawTextRect = textRect.inflate(-5, -5)
     
-    drawText(window, opcionesb[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True)
+    drawText(window, opcionesb[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True) # imprime opcion b
     pygame.display.flip()
     # fin de opciones
-    #Esperar respuesta por bluetooth
     
-    botton_siguiente()
+    
+    print("Eliga respuesta\n")
+    respuesta = input("A o B")
+    botton_siguiente(orden_preguntas[turno])
 
 # if event.key == 1073741882 or 282:
 # pygame.quit()

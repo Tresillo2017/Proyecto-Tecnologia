@@ -107,7 +107,7 @@ opcionesb = [
     
     "Barcelona",
     
-    "Dueo",
+    "Duero",
     
     "Pomulo y Rema",
     
