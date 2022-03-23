@@ -30,7 +30,6 @@ smallfont = pygame.font.SysFont('Corbel',35)
 # this font
 text = smallfont.render('Corregir' , True , color)
 
-# Don't touch it (works)
 def drawText(surface, text, color, rect, font, align=textAlignLeft, aa=False, bkg=None):
     lineSpacing = -2
     spaceWidth, fontHeight = font.size(" ")[0], font.size("Tg")[1]
@@ -108,9 +107,9 @@ def botton_siguiente():
         # if mouse is hovered on a button it
         # changes to lighter shade 
         if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-            pygame.draw.rect(window,color_light,[200,150,170,40])
+            pygame.draw.rect(window,color_light,[width/2,height/2,140,40])
         else:
-            pygame.draw.rect(window,color_dark,[200,150,170,40])
+            pygame.draw.rect(window,color_dark,[width/2,height/2,140,40])
         # superimposing the text onto our button
         window.blit(text , (width/2+50,height/2))
     
