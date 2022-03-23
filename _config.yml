@@ -1,0 +1,60 @@
+url: https://tresillo.github.io
+baseurl: /Proyecto-Tecnologia/
+
+# Site settings
+title: Gana y Juega
+email: 4552854@alu.murciaeduca.es
+description: ""
+
+
+# Team names, titles and social links
+people:
+- name: Tomas Palma
+  pic: 1
+  position: Coder
+  social:
+    - title: twitter
+      url: http://twitter.com/toomas_ps
+
+- name: Guillermo Galvan
+  pic: 2
+  position: Designer
+  social:
+    - title: twitter
+      url: #
+    - title: facebook
+      url: #
+    - title: linkedin
+      url: #
+
+- name: Carlos Garcia
+  pic: 3
+  position: Designer
+  social:
+    - title: twitter
+      url: #
+    - title: facebook
+      url: #
+    - title: google-plus
+      url: #
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: http://twitter.com/toomas_ps
+  - title: facebook
+    url:
+  - title: stack-overflow
+    url: http://stackoverflow.com/questions/tagged/jekyll
+  - title: bitbucket 
+    url: http://bitbucket.org/jekyll
+  - title: github
+    url: http://github.com/tresillo2017
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: C. Reina Sofía, 1, 30007 Murcia
+
+# Build settings
+markdown: kramdown
+permalink: pretty
