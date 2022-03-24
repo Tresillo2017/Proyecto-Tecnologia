@@ -3,9 +3,19 @@ from sys import exit
 import pygame
 import random
 import os
-import server as btserver
+# import server as btserver
 from arrays import *
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 turno = 0
 puntuacion = 0
@@ -50,6 +60,39 @@ smallfont = pygame.font.SysFont('Corbel',35)
 # rendering a text written in
 # this font
 text = smallfont.render('Corregir' , True , color)
+
+def main():
+    pygame.display.init()
+    for turno in range(0,20):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                break
+        
+    msg = preguntas[orden_preguntas[turno]]
+    window.fill((255, 255, 255))
+    textRect = pygame.Rect(25, 50, 430, 100)
+    pygame.draw.rect(window, (255, 255, 255), textRect, 1)
+    drawTextRect = textRect.inflate(-5, -5)
+    drawText(window, msg, (0, 0, 0), drawTextRect, font, textAlignCenter, True)
+    # opciones
+    
+    textRect = pygame.Rect(50,170,150,100) # left, top, width, height
+    drawTextRect = textRect.inflate(-5, -5)
+    drawText(window, opcionesa[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True) # imprime opcion a
+    
+    textRect = pygame.Rect(300,170,150,100)
+    drawTextRect = textRect.inflate(-5, -5)
+    
+    drawText(window, opcionesb[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True) # imprime opcion b
+    pygame.display.flip()
+    # fin de opciones
+    
+    global respuesta # Used for saying to the function "main" that the variable respuesta exist outside the function
+    pygame.display.update()
+    print(bcolors.OKBLUE, "Eliga respuesta", bcolors.ENDC)
+    respuesta = input("A o B: ")
+    botton_siguiente(orden_preguntas[turno])
+
 
 # Don't touch it (works)
 def drawText(surface, text, color, rect, font, align=textAlignLeft, aa=False, bkg=None):
@@ -116,7 +159,7 @@ def botton_siguiente(indice):
                 #if the mouse is clicked on the
                 # button the game is terminated
                 if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-                    print("Boton pulsado")
+                    print(bcolors.HEADER,"Boton pulsado", bcolors.ENDC)
                     corregir(indice)
 
         # fills the screen with a color
@@ -139,12 +182,19 @@ def botton_siguiente(indice):
         pygame.display.update()
 
 def corregir(indice):
-    if respuesta == "A" and ans[indice] == 1:
-        puntuacion = puntuacion +1
-    elif respuesta == "B" and ans[indice] == 2:
-        puntuacion = puntuacion +1
+    global puntuacion # Used for saying to the function "corregir" that the variable puntuacion exist outside the function
+    if respuesta == "A" and ans[indice] == 1: # Checks if the user value is A and in the code answer arrays is corrrect; if so add 1 point to the user
+        puntuacion +1
+        pygame.display.init()
+        main()
+    elif respuesta == "B" and ans[indice] == 2:#  Checks if the user value is A and in the code answer arrays is corrrect; if so add 1 point to the user
+        puntuacion +1
+        pygame.display.init()
+        main()
     else:
-        print("respuesta incorrecta")
+        print(bcolors.FAIL,"Respuesta Incorrecta", bcolors.ENDC) # Print "respues incorrecta"
+        exit()
+
 
 pygame.display.set_caption('Gana y Juega')
 orden_preguntas = random.sample(range(0,20), 20)
@@ -155,7 +205,7 @@ textRect = pygame.Rect(50, 50, 430, 270)
 window = pygame.display.set_mode((480, 320))
 
 run = True
-
+'''
 for turno in range(0,20):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -169,7 +219,7 @@ for turno in range(0,20):
     drawText(window, msg, (0, 0, 0), drawTextRect, font, textAlignCenter, True)
     # opciones
     
-    textRect = pygame.Rect(50,160,150,100) # left, top, width, height
+    textRect = pygame.Rect(50,170,150,100) # left, top, width, height
     drawTextRect = textRect.inflate(-5, -5)
     drawText(window, opcionesa[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True) # imprime opcion a
     
@@ -181,9 +231,11 @@ for turno in range(0,20):
     # fin de opciones
     
     
-    print("Eliga respuesta\n")
-    respuesta = input("A o B")
+    print(bcolors.OKBLUE, "Eliga respuesta", bcolors.ENDC)
+    respuesta = input("A o B: ")
     botton_siguiente(orden_preguntas[turno])
+'''
+main()
 
 # if event.key == 1073741882 or 282:
 # pygame.quit()
