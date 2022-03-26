@@ -1,12 +1,14 @@
 from re import A, T
 from sys import exit
+import time
 import pygame
 import random
 import os
-import server as btserver
 from arrays import *
 
-
+green = (124,252,0)
+white = (250,250,250)
+red = (255,0,0)
 turno = 0
 puntuacion = 0
 pygame.init()
@@ -50,6 +52,8 @@ smallfont = pygame.font.SysFont('Corbel',35)
 # rendering a text written in
 # this font
 text = smallfont.render('Corregir' , True , color)
+
+
 
 # Don't touch it (works)
 def drawText(surface, text, color, rect, font, align=textAlignLeft, aa=False, bkg=None):
@@ -117,7 +121,7 @@ def botton_siguiente(indice):
                 # button the game is terminated
                 if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
                     print("Boton pulsado")
-                    corregir(indice)
+                    # siguiente()
 
         # fills the screen with a color
         #window.fill((60,25,60))
@@ -129,25 +133,34 @@ def botton_siguiente(indice):
         # if mouse is hovered on a button it
         # changes to lighter shade 
         if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-            pygame.draw.rect(window,color_light,[160,260,170,40])
+            pygame.draw.rect(window,color_light,[width/2,height/2,140,40])
         else:
-            pygame.draw.rect(window,color_dark,[160,260,170,40])
+            pygame.draw.rect(window,color_dark,[width/2,height/2,140,40])
         # superimposing the text onto our button
-        window.blit(text , (180,260))
+        window.blit(text , (width/2+50,height/2))
     
         # updates the frames of the game
         pygame.display.update()
 
-def corregir(indice):
-    if respuesta == "A" and ans[indice] == 1:
-        puntuacion = puntuacion +1
-    elif respuesta == "B" and ans[indice] == 2:
-        puntuacion = puntuacion +1
-    else:
-        print("respuesta incorrecta")
+def boton(ventana,texto,x,y,width,height):
+    # texto A
+    textoa = smallfont.render(texto,True, color)
+    botona = pygame.Rect(x,y,width,height)
+    pygame.draw.rect(ventana,color_dark, botona) # 10, 140, 250, 50
+        # else:
+        # pygame.draw.rect(window,color_dark,[10,140,250,50]) # left, top, width, height
+    # superimposing the text onto our button
+    window.blit(textoa , (x+10,y+10))
+    
+        # updates the frames of the game
+    pygame.display.flip()
+    return botona
+
 
 pygame.display.set_caption('Gana y Juega')
 orden_preguntas = random.sample(range(0,20), 20)
+
+
 
 textRect = pygame.Rect(50, 50, 430, 270)
 
@@ -167,23 +180,70 @@ for turno in range(0,20):
     pygame.draw.rect(window, (255, 255, 255), textRect, 1)
     drawTextRect = textRect.inflate(-5, -5)
     drawText(window, msg, (0, 0, 0), drawTextRect, font, textAlignCenter, True)
+    
     # opciones
-    
-    textRect = pygame.Rect(50,160,150,100) # left, top, width, height
-    drawTextRect = textRect.inflate(-5, -5)
-    drawText(window, opcionesa[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True) # imprime opcion a
-    
-    textRect = pygame.Rect(300,170,150,100)
-    drawTextRect = textRect.inflate(-5, -5)
-    
-    drawText(window, opcionesb[orden_preguntas[turno]], (0, 0, 0), drawTextRect, font, textAlignCenter, True) # imprime opcion b
+    botona = boton(window,opcionesa[orden_preguntas[turno]],10, 140, 400, 50)
+    botonb = boton(window,opcionesb[orden_preguntas[turno]],10, 200, 400, 50)
+    """
+    Dibujar los dos botones con las soluciones
+    Entrar en un bucle comprobando los eventos
+        si el raton esta pulsado
+            coger la posicion del raton 
+            if (boton1.collide(x,y))
+                respuesta a
+            elif (boton2.collide(x,y)) 
+                respuesta b  
+    """
+    pulsacion = False
+    while not pulsacion:
+        for ev in pygame.event.get():
+
+            if ev.type == pygame.QUIT:
+                pygame.quit()
+            
+            if ev.type == pygame.MOUSEBUTTONDOWN:
+                x,y = pygame.mouse.get_pos()
+                if botona.collidepoint(x,y):
+                    pulsacion = True
+                    respuesta = "A"
+                    print("pulsado a")
+                elif botonb.collidepoint(x,y):
+                    pulsacion = True
+                    respuesta = "B"
+                    print("pulsado b")
     pygame.display.flip()
     # fin de opciones
+    if respuesta == "A" and ans[turno] == 1:
+        puntuacion = puntuacion +1
+        # Green color
+        window.fill(green)
+        pygame.display.flip()
+        time.sleep(1)
+        # default color
+        window.fill(white)
+        pygame.display.flip()
+    elif respuesta == "B" and ans[turno] == 2:
+        puntuacion = puntuacion +1
+        # Green color
+        window.fill(green)
+        pygame.display.flip()
+        time.sleep(1)
+        # default color
+        window.fill(white)
+    else:
+        print("respuesta incorrecta")
+        puntuacion = puntuacion - 1
+        # Red background
+        window.fill(red)
+        pygame.display.update()
+        time.sleep(1)
+        # default background
+        window.fill(white)
+        pygame.display.flip()
+     # left, top, width, height
+    # puntuacion
     
     
-    print("Eliga respuesta\n")
-    respuesta = input("A o B")
-    botton_siguiente(orden_preguntas[turno])
 
 # if event.key == 1073741882 or 282:
 # pygame.quit()
@@ -192,5 +252,8 @@ for turno in range(0,20):
 
 #Limpiar la pantalla
 ## Escribir contador de respuestas correcta
+boton(window,str(puntuacion),10,230,400,50)
+pygame.display.flip()
+time.sleep(5)
 pygame.quit()
 exit()

@@ -69,7 +69,7 @@ opcionesa = [
 
     "Romulo y Remo",
 
-    "Don Quijot ",
+    "Don Quijote",
 
     "Freddy Mercury",
 
