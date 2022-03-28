@@ -170,7 +170,7 @@ def boton(ventana,texto,x,y,width,height):
 
 
 pygame.display.set_caption('Gana y Juega')
-orden_preguntas = random.sample(range(0,20), 20)
+orden_preguntas = random.sample(range(0,40), 40)
 
 
 
@@ -181,7 +181,7 @@ window = pygame.display.set_mode((480, 320))
 
 run = True
 
-for turno in range(0,20):
+for turno in range(0,40):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             break
