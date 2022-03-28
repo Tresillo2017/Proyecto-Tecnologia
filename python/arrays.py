@@ -18,7 +18,7 @@ preguntas = [
     "¿Quién descubrió los satélites de Júpiter?",
     "¿Qué país tiene más copas del mundo de fútbol?",
     "¿De qué país es Lionel Andrés Messi?",
-    "¿Dónde jugó en la mayoría de su carrera Kobe Bryant?"
+    "¿Dónde jugó en la mayoría de su carrera Kobe Bryant?",
 ]
 
 ans = [  
