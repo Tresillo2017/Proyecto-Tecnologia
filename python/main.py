@@ -24,7 +24,7 @@ class bcolors:
 turno = 0
 puntuacion = 0
 pygame.init()
-font = pygame.font.SysFont(None, 40)
+font = pygame.font.SysFont(None, 70)
 
 textAlignLeft = 0
 textAlignRight = 1
@@ -59,7 +59,7 @@ End of the width and height variables
 # the variable as a tuple
 mouse = pygame.mouse.get_pos()
 
-smallfont = pygame.font.SysFont('Corbel',100)
+smallfont = pygame.font.SysFont('Corbel',80)
 
 # rendering a text written in
 # this font
@@ -156,21 +156,21 @@ def botton_siguiente(indice):
 
 def boton(ventana,texto,x,y,width,height):
     # texto A
-    textoa = smallfont.render(texto,True, color)
-    botona = pygame.Rect(x,y,width,height)
-    pygame.draw.rect(ventana,color_dark, botona) # 10, 140, 250, 50
+    texto = smallfont.render(texto,True, color)
+    botonc = pygame.Rect(x,y,width,height)
+    pygame.draw.rect(ventana,color_dark, botonc) # 10, 140, 250, 50
         # else:
         # pygame.draw.rect(window,color_dark,[10,140,250,50]) # left, top, width, height
     # superimposing the text onto our button
-    window.blit(textoa , (x+10,y+10))
+    window.blit(texto , (x+10,y+10))
     
         # updates the frames of the game
     pygame.display.flip()
-    return botona
+    return botonc
 
 
 pygame.display.set_caption('Gana y Juega')
-orden_preguntas = random.sample(range(0,40), 40)
+orden_preguntas = random.sample(range(0,39), 20)
 
 
 
@@ -181,21 +181,32 @@ window = pygame.display.set_mode((800, 600), pygame.FULLSCREEN)
 
 run = True
 
-for turno in range(0,40):
+for turno in range(0,19): # 0,40 default
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             break
-        
-    msg = preguntas[orden_preguntas[turno]]
-    window.fill((255, 255, 255))
-    textRect = pygame.Rect(150, 50, 600, 100)
+    
+    print(bcolors.WARNING,"Orden de preguntas: ",orden_preguntas, bcolors.ENDC, "\n")
+    msg = preguntas[orden_preguntas[turno]] 
+    window.fill((255, 255, 255)) 
+    textRect = pygame.Rect(70, 10, 600, 250)
     pygame.draw.rect(window, (255, 255, 255), textRect, 1)
     drawTextRect = textRect.inflate(-5, -5)
     drawText(window, msg, (0, 0, 0), drawTextRect, font, textAlignCenter, True)
     
+    print("Antes de botones ", orden_preguntas[turno])
+    
     # opciones
-    botona = boton(window,opcionesa[orden_preguntas[turno]],150, 300, 600, 100)
-    botonb = boton(window,opcionesb[orden_preguntas[turno]],150, 450, 600, 100)
+    botona = boton(window,opcionesa[orden_preguntas[turno]],10, 300, 700, 100)
+    print(bcolors.OKCYAN,opcionesa[orden_preguntas[turno]],bcolors.ENDC) # print to serial text of botona
+    botonb = boton(window,opcionesb[orden_preguntas[turno]],10, 450, 700, 100)
+    print(bcolors.OKBLUE,opcionesb[orden_preguntas[turno]],bcolors.ENDC) # print to serial text of botonb
+    
+    print(bcolors.HEADER,ans[turno], bcolors.ENDC) # print to serial text of ans
+    
+    print("Despues de botones ",orden_preguntas[turno])
+    
+    # fin de opciones
     """
     Dibujar los dos botones con las soluciones
     Entrar en un bucle comprobando los eventos
@@ -218,13 +229,14 @@ for turno in range(0,40):
                 if botona.collidepoint(x,y):
                     pulsacion = True
                     respuesta = "A"
-                    print("pulsado a")
+                    print(bcolors.UNDERLINE, "Pulsado a", bcolors.ENDC)
                 elif botonb.collidepoint(x,y):
                     pulsacion = True
                     respuesta = "B"
-                    print("pulsado b")
+                    print(bcolors.UNDERLINE,"Pulsado b", bcolors.ENDC)
+        # clean event queue 
+        pygame.event.clear()
     pygame.display.flip()
-    # fin de opciones
     if respuesta == "A" and ans[turno] == 1:
         puntuacion = puntuacion +1
         # Green color
@@ -243,7 +255,7 @@ for turno in range(0,40):
         # default color
         window.fill(white)
     else:
-        print("respuesta incorrecta")
+        print(bcolors.FAIL,"Respuesta incorrecta", bcolors.ENDC)
         puntuacion = puntuacion - 1
         # Red background
         window.fill(red)
@@ -263,8 +275,30 @@ for turno in range(0,40):
 
 #Limpiar la pantalla
 ## Escribir contador de respuestas correcta
-boton(window,str(puntuacion),10,230,400,50)
+boton(window,"Tu puntuacion es de", 0,100,800,100)
+boton(window,str(puntuacion),0,230,800,100)
+
+jugardenuevo = boton(window,"Jugar de nuevo", 100,450,500,100)
+# if the boton is pulsed start again the program
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            x,y = pygame.mouse.get_pos()
+            if jugardenuevo.collidepoint(x,y):
+                print("Boton pulsado")
+                os.system('python "main.py"')
+            else:
+                print("Boton no pulsado")
+                pygame.quit()
+                exit()
+
+
+
 pygame.display.flip()
 time.sleep(5)
 pygame.quit()
 exit()
+

@@ -1,44 +1,44 @@
 preguntas = [
-    "¿Quién descubrió América?",  
-    "¿Cuándo terminó la Segunda Guerra Mundial?",  
-    "¿Cuántas especies de perros hay?",  
-    "¿Quién salvó al pueblo hebreo del faraón egipcio?",  
-    "¿Quién es el tenista con más Grand Slam?",
-    "¿Cómo se llama el actor de Harry Potter?",
-    "¿En qué continente se encuentran las Islas del Caribe?",
-    "¿Quién inventó la bombilla?",
-    "¿Cuál es el territorio con mayor población?",
-    "¿En qué ciudad española está el estadio conocido como Wanda Metropolitano?",
-    "¿Cuál es el río más caudaloso del mundo?",
-    "¿Quienes fueron los dos hermanos fundadores de Roma?",
-    "¿Quién era conocido como “el manco de Lepanto”?",
-    "¿Quién fue el famoso cantante del grupo musical Queen?",
-    "¿Quién es el YouTuber con más suscriptores?",
-    "¿Qué gran artista pintó la Capilla Sixtina?",
-    "¿Quién descubrió los satélites de Júpiter?",
-    "¿Qué país tiene más copas del mundo de fútbol?",
-    "¿De qué país es Lionel Andrés Messi?",
-    "¿Dónde jugó en la mayoría de su carrera Kobe Bryant?",
-    "¿Qué equipo de fútbol tiene más Champions?",
-    "¿En qué continente se encuentra Suiza?",
-    "¿Cómo se llama el nuevo virus que nos ha tenido en pandemia durante 2 años?",
-    "¿Cuál era la moneda utilizada en España antes del Euro?",
-    "¿Cuál es la película más taquillera de la historia?",
-    "¿En qué año ganó España el mundial?",
-    "¿En qué continente se encuentra China?",
-    "¿Qué idioma es el más utilizado en el planeta?",
-    "¿Cómo se llamaba la enamorada de Don Quijote?",
-    "¿En qué serie sale el Demogorgon?",
-    "¿En qué ciudad se encuentra el Camp Nou?",
-    "¿Cómo se llama el rey de España?",
-    "¿Qué país está entre Perú y Colombia?",
-    "¿Quién fue la ganadora de los Grammy latinos en 2018?",
-    "¿Qué mide en París 333 metros?",
-    "¿Cuál es el pájaro símbolo de La Paz?",
-    "¿Cuántos jugadores tiene un equipo de voleibol?",
-    "¿Qué mes tiene menos días?",
-    "¿Quién fue el ganador de MotoGP en 2017?",
-    "¿Qué planeta se encuentra más cerca del Sol?"
+    "¿Quién descubrió América?", # pregunta 1
+    "¿Cuándo terminó la Segunda Guerra Mundial?", # pregunta 2  
+    "¿Cuántas especies de perros hay?",  # pregunta 3
+    "¿Quién salvó al pueblo hebreo del faraón egipcio?", # pregunta 4  
+    "¿Quién es el tenista con más Grand Slam?", # pregunta 5
+    "¿Cómo se llama el actor de Harry Potter?", # pregunta 6
+    "¿En qué continente se encuentran las Islas del Caribe?", # pregunta 7
+    "¿Quién inventó la bombilla?", # pregunta 8
+    "¿Cuál es el territorio con mayor población?", # pregunta 9
+    "¿En qué ciudad española está el estadio conocido como Wanda Metropolitano?", # pregunta 10
+    "¿Cuál es el río más caudaloso del mundo?", # pregunta 11
+    "¿Quienes fueron los dos hermanos fundadores de Roma?", # pregunta 12
+    "¿Quién era conocido como “el manco de Lepanto”?", # pregunta 13
+    "¿Quién fue el famoso cantante del grupo musical Queen?", # pregunta 14
+    "¿Quién es el YouTuber con más suscriptores?", # pregunta 15
+    "¿Qué gran artista pintó la Capilla Sixtina?", # pregunta 16
+    "¿Quién descubrió los satélites de Júpiter?", # pregunta 17
+    "¿Qué país tiene más copas del mundo de fútbol?", # pregunta 18
+    "¿De qué país es Lionel Andrés Messi?", # pregunta 19
+    "¿Dónde jugó en la mayoría de su carrera Kobe Bryant?", # pregunta 20
+    "¿Qué equipo de fútbol tiene más Champions?", # pregunta 21
+    "¿En qué continente se encuentra Suiza?", # pregunta 22
+    "¿Cómo se llama el nuevo virus que nos ha tenido en pandemia durante 2 años?", # pregunta 23
+    "¿Cuál era la moneda utilizada en España antes del Euro?", # pregunta 24
+    "¿Cuál es la película más taquillera de la historia?", # pregunta 25
+    "¿En qué año ganó España el mundial?", # pregunta 26
+    "¿En qué continente se encuentra China?", # pregunta 27
+    "¿Qué idioma es el más utilizado en el planeta?", # pregunta 28
+    "¿Cómo se llamaba la enamorada de Don Quijote?", # pregunta 29
+    "¿En qué serie sale el Demogorgon?", # pregunta 30
+    "¿En qué ciudad se encuentra el Camp Nou?", # pregunta 31
+    "¿Cómo se llama el rey de España?", # pregunta 32
+    "¿Qué país está entre Perú y Colombia?", # pregunta 33
+    "¿Quién fue la ganadora de los Grammy latinos en 2018?", # pregunta 34
+    "¿Qué mide en París 333 metros?", # pregunta 35
+    "¿Cuál es el pájaro símbolo de La Paz?", # pregunta 36
+    "¿Cuántos jugadores tiene un equipo de voleibol?", # pregunta 37
+    "¿Qué mes tiene menos días?", # pregunta 38
+    "¿Quién fue el ganador de MotoGP en 2017?", # pregunta 39
+    "¿Qué planeta se encuentra más cerca del Sol?" # pregunta 40
 ]
 
 ans = [  
@@ -53,7 +53,7 @@ ans = [
     1, # pregunta 9
     1, # pregunta 10
     1, # pregunta 11
-    1, # pregunta 12
+    1, # pregunta 12    
     2, # pregunta 13
     1, # pregunta 14
     1, # pregunta 15
@@ -85,165 +85,165 @@ ans = [
 ]  
 
 opcionesa = [     
-    "Cristobal Colon",  
+    "Cristobal Colon",   # pregunta 1
 
-    "1945",  
+    "1945",  # pregunta 2
 
-    "343",  
+    "343",  # pregunta 3
 
-    "Abraham",  
+    "Abraham",  # pregunta 4
 
-    "Rafael Nadal",  
+    "Rafael Nadal", # pregunta 5
 
-    "Daniel Radcliffe",
+    "Daniel Radcliffe", # pregunta 6
 
-    "Europa",
+    "Europa", # pregunta 7
 
-    "Thomas Edison",
+    "Thomas Edison", # pregunta 8
 
-    "China",
+    "China",  # pregunta 9
 
-    "Madrid",
+    "Madrid",  # pregunta 10
 
-    "Amazonas",
+    "Amazonas",  # pregunta 11
 
-    "Romulo y Remo",
+    "Romulo y Remo", # pregunta 12
 
-    "Don Quijot ",
+    "Don Quijote", # pregunta 13
 
-    "Freddy Mercury",
+    "Freddy Mercury", # pregunta 14
 
-    "Pewdiepie",
+    "Pewdiepie", # pregunta 15
 
-    "Miguel Angel",
+    "Miguel Angel", # pregunta 16
 
-    "Mozart",
+    "Mozart",  # pregunta 17
 
-    "Francia",
+    "Francia",  # pregunta 18
 
-    "Francia",
+    "Francia", # pregunta 19
 
-    "Barcelona",
+    "Barcelona",  # pregunta 20
 
-    "Real Madrid",
+    "Real Madrid", # pregunta 21
 
-    "América",
+    "América",  # pregunta 22
     
-    "Estoma Virus",
+    "Estoma Virus", # pregunta 23
     
-    "Libra",
+    "Libra",  # pregunta 24
     
-    "Peppa Pig",
+    "Peppa Pig", # pregunta 25
     
-    "2002",
+    "2002",  # pregunta 26
     
-    "Europa",
+    "Europa",  # pregunta 27
     
-    "Español",
+    "Español",  # pregunta 28
     
-    "Dulcinea",
+    "Dulcinea",  # pregunta 29
     
-    "Vikingos",
+    "Vikingos",  # pregunta 30
     
-    "Valencia",
+    "Valencia",  # pregunta 31
     
-    "Guillermo II",
+    "Guillermo II", # pregunta 32
     
-    "Alemania",
+    "Alemania",  # pregunta 33
     
-    "Rosalia",
+    "Rosalia",  # pregunta 34
     
-    "La Mona Lisa",
+    "La Mona Lisa", # pregunta 35
     
-    "Pajaro Carpintero",
+    "Pajaro Carpintero", # pregunta 36
     
-    "20",
+    "20",  # pregunta 37
     
-    "Octubre",
+    "Octubre",  # pregunta 38
     
-    "Cristiano Ronaldo",
+    "Cristiano Ronaldo", # pregunta 39
     
-    "Pluton"
+    "Pluton"  # pregunta 40
 ]
 
 opcionesb = [
-    "Ibai Llanos",
+    "Ibai Llanos", # pregunta 1
     
-    "2000",
+    "2000",  # pregunta 2
     
-    "50",
+    "50",  # pregunta 3
     
-    "Moises",
+    "Moises",  # pregunta 4
     
-    "Tomas Palma",
+    "Tomas Palma", # pregunta 5
     
-    "Tom Holland",
+    "Tom Holland", # pregunta 6
     
-    "America",
+    "America",  # pregunta 7
     
-    "Abraham Mateo",
+    "Abraham Mateo", # pregunta 8
     
-    "Teruel",
+    "Teruel",  # pregunta 9
 
-    "Barcelona",
+    "Barcelona",  # pregunta 10
 
-    "Duero",
+    "Duero",  # pregunta 11
 
-    "Pomulo y Rema",
+    "Pomulo y Rema", # pregunta 12
 
-    "Miguel de Cervantes",
+    "Miguel de Cervantes", # pregunta 13
 
-    "Jhon Lennon",
+    "Jhon Lennon", # pregunta 14
 
-    "Djmariio",
+    "Djmariio", # pregunta 15
 
-    "Beethoven",
+    "Beethoven", # pregunta 16
 
-    "Galileo",
+    "Galileo",  # pregunta 17
 
-    "Brasil",
+    "Brasil",  # pregunta 18
 
-    "Argentina",
+    "Argentina",  # pregunta 19
 
-    "Lakers",
+    "Lakers",  # pregunta 20
 
-    "Alcoyano",
+    "Alcoyano",  # pregunta 21
     
-    "Europa",
+    "Europa",  # pregunta 22
     
-    "Coronavirus",
+    "Coronavirus",  # pregunta 23
     
-    "Peseta",
+    "Peseta",  # pregunta 24
     
-    "Avengers:Endgame",
+    "Avengers:Endgame", # pregunta 25
     
-    "2010",
+    "2010", # pregunta 26
     
-    "Asia",
+    "Asia",  # pregunta 27
     
-    "Mandarin",
+    "Mandarin",  # pregunta 28
     
-    "Eustaquia",
+    "Eustaquia",  # pregunta 29
     
-    "Stranger Things",
+    "Stranger Things", # pregunta 30
     
-    "Barcelona",
+    "Barcelona",  # pregunta 31
     
-    "Felipe VI",
+    "Felipe VI", # pregunta 32
     
-    "Ecuador",
+    "Ecuador",  # pregunta 33
     
-    "Anita",
+    "Anita",  # pregunta 34
     
-    "La Torre Eiffel",
+    "La Torre Eiffel", # pregunta 35
     
-    "Paloma",
+    "Paloma", # pregunta 36
     
-    "6",
+    "6", # pregunta 37
     
-    "Febrero",
+    "Febrero",  # pregunta 38
     
-    "Marc Marquez",
+    "Marc Marquez", # pregunta 39
     
-    "Mercurio",
+    "Mercurio"  # pregunta 40
 ]
