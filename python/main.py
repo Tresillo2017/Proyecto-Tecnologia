@@ -59,7 +59,7 @@ End of the width and height variables
 # the variable as a tuple
 mouse = pygame.mouse.get_pos()
 
-smallfont = pygame.font.SysFont('Corbel',35)
+smallfont = pygame.font.SysFont('Corbel',100)
 
 # rendering a text written in
 # this font
@@ -177,7 +177,7 @@ orden_preguntas = random.sample(range(0,40), 40)
 textRect = pygame.Rect(50, 50, 430, 270)
 
 # add pygame.FULLSCREEN for fullscreen
-window = pygame.display.set_mode((480, 320))
+window = pygame.display.set_mode((800, 600), pygame.FULLSCREEN)
 
 run = True
 
@@ -188,14 +188,14 @@ for turno in range(0,40):
         
     msg = preguntas[orden_preguntas[turno]]
     window.fill((255, 255, 255))
-    textRect = pygame.Rect(25, 50, 430, 100)
+    textRect = pygame.Rect(150, 50, 600, 100)
     pygame.draw.rect(window, (255, 255, 255), textRect, 1)
     drawTextRect = textRect.inflate(-5, -5)
     drawText(window, msg, (0, 0, 0), drawTextRect, font, textAlignCenter, True)
     
     # opciones
-    botona = boton(window,opcionesa[orden_preguntas[turno]],10, 140, 400, 50)
-    botonb = boton(window,opcionesb[orden_preguntas[turno]],10, 200, 400, 50)
+    botona = boton(window,opcionesa[orden_preguntas[turno]],150, 300, 600, 100)
+    botonb = boton(window,opcionesb[orden_preguntas[turno]],150, 450, 600, 100)
     """
     Dibujar los dos botones con las soluciones
     Entrar en un bucle comprobando los eventos
