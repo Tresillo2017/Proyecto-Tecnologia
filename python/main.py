@@ -198,11 +198,18 @@ for turno in range(0,19): # 0,40 default
     
     # opciones
     botona = boton(window,opcionesa[orden_preguntas[turno]],10, 300, 700, 100)
+    
+    print(bcolors.HEADER,turno, bcolors.ENDC) # print to serial text of ans
+    
     print(bcolors.OKCYAN,opcionesa[orden_preguntas[turno]],bcolors.ENDC) # print to serial text of botona
+    
     botonb = boton(window,opcionesb[orden_preguntas[turno]],10, 450, 700, 100)
+    
     print(bcolors.OKBLUE,opcionesb[orden_preguntas[turno]],bcolors.ENDC) # print to serial text of botonb
     
-    print(bcolors.HEADER,ans[turno], bcolors.ENDC) # print to serial text of ans
+    print(bcolors.HEADER,turno, bcolors.ENDC) # print to serial text of ans
+    
+    print(bcolors.HEADER,ans[orden_preguntas[turno]], bcolors.ENDC) # print to serial text of ans
     
     print("Despues de botones ",orden_preguntas[turno])
     
@@ -237,7 +244,7 @@ for turno in range(0,19): # 0,40 default
         # clean event queue 
         pygame.event.clear()
     pygame.display.flip()
-    if respuesta == "A" and ans[turno] == 1:
+    if respuesta == "A" and ans[orden_preguntas[turno]] == 1:
         puntuacion = puntuacion +1
         # Green color
         window.fill(green)
@@ -246,7 +253,7 @@ for turno in range(0,19): # 0,40 default
         # default color
         window.fill(white)
         pygame.display.flip()
-    elif respuesta == "B" and ans[turno] == 2:
+    elif respuesta == "B" and ans[orden_preguntas[turno]] == 2:
         puntuacion = puntuacion +1
         # Green color
         window.fill(green)
