@@ -297,6 +297,8 @@ while True:
             if jugardenuevo.collidepoint(x,y):
                 print("Boton pulsado")
                 os.system('python "main.py"')
+                pygame.quit()
+                exit()
             else:
                 print("Boton no pulsado")
                 pygame.quit()
